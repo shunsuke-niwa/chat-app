@@ -1,7 +1,7 @@
 <div class="chat-header">
   <div class="left-header">
     <div class="header-title">
-      <%= @room.name%>
+      <%= @room.name %>
     </div>
   </div>
   <div class="right-header">
@@ -15,8 +15,7 @@
   <%= render partial: 'message', collection: @messages %>
 </div>
 
-<div class="form">
- <%= form_with model: [@room, @message], html: {class: "form"}, local: true do |f|%>
+<%= form_with model: [@room, @message], html: {class: "form"}, local: true do |f|%>
   <div class="form-input">
     <%= f.text_field :content, class: 'form-message', placeholder: 'type a message' %>
     <label class="form-image">
@@ -25,5 +24,4 @@
     </label>
   </div>
   <%= f.submit '送信', class: 'form-submit' %>
- <% end %>
-</end>
+<% end %>
